@@ -1,15 +1,10 @@
-package com.spring.training;
+package com.spring.training.model;
 
-import org.hibernate.annotations.Type;
 import org.hibernate.validator.constraints.NotEmpty;
-import org.joda.time.LocalDate;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity
@@ -81,7 +76,7 @@ public class Player {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Player player = (Player) o;
-        return id == player.id &&
+        return id.equals(player.id) &&
                 Objects.equals(firstName, player.firstName) &&
                 Objects.equals(lastName, player.lastName);
     }
