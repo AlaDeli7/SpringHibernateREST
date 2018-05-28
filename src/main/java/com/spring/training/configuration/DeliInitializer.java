@@ -4,7 +4,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 public class DeliInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[]{DeliInitializer.class};
+        return new Class[]{DeliConfiguration.class};
     }
 
     protected Class<?>[] getServletConfigClasses() {
