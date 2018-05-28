@@ -8,7 +8,7 @@ import javax.validation.constraints.Size;
 import java.util.Objects;
 
 @Entity
-@Table(name = "PALYER")
+@Table(name = "PLAYER")
 public class Player {
 
     @Id
@@ -28,8 +28,8 @@ public class Player {
     private Integer age;
 
     @NotEmpty
-    @Column(name = "POSITION", nullable = false)
-    private String position;
+    @Column(name = "PLAYERPOSITION", nullable = false)
+    private String playerPosition;
 
     public Integer getId() {
         return id;
@@ -47,8 +47,8 @@ public class Player {
         return age;
     }
 
-    public String getPosition() {
-        return position;
+    public String getPlayerPosition() {
+        return playerPosition;
     }
 
     public void setId(Integer id) {
@@ -67,8 +67,8 @@ public class Player {
         this.age = age;
     }
 
-    public void setPosition(String position) {
-        this.position = position;
+    public void setPlayerPosition(String playerPosition) {
+        this.playerPosition = playerPosition;
     }
 
     @Override
