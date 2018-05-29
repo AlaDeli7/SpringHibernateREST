@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional(readOnly = true)
 public class PlayerServiceImpl implements PlayerService {
@@ -18,9 +20,20 @@ public class PlayerServiceImpl implements PlayerService {
         return playerDao.findById(id);
     }
 
+    @Override
+    public List<Player> findAllPlayers() {
+        return playerDao.findAllPlayer();
+    }
+
     @Transactional
     @Override
     public void savePlayer(Player player) {
         playerDao.savePlayer(player);
+    }
+
+    @Transactional
+    @Override
+    public void deletePlayer(Integer id) {
+        playerDao.deletePlayer(id);
     }
 }
